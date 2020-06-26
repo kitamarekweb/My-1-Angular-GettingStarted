@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {IProduct} from './product';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   templateUrl: './product-detail.component.html',
@@ -9,9 +10,21 @@ export class ProductDetailComponent implements OnInit {
   pageTitle: string = 'ProductDetails';
   product: IProduct;
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    let id = +this.route.snapshot.paramMap.get('id');
+    this.pageTitle += `: ${id}`;
+    this.product = {
+      "productId": id,
+      "productName": "Saw",
+      "productCode": "TBX-0022",
+      "releaseDate": "May 15, 2019",
+      "description": "15-inch steel blade hand saw",
+      "price": 11.55,
+      "starRating": 3.7,
+      "imageUrl": "assets/images/saw.png"
+    }
   }
 
 }
