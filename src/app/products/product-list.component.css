@@ -1,3 +1,23 @@
 thead {
   color: #337AB7;
 }
+
+.search-dropdown-container {
+  position: absolute;
+  z-index: 1;
+  width: 11.6rem;
+  /*height: 47px;*/
+  max-height: 100px;
+  background: #F6F6F6;
+  overflow-y: auto;
+}
+
+.search-dropdown {
+  padding: 10px;
+  font-family: sans-serif;
+  color: #A550BC;
+}
+
+.search-dropdown:hover {
+  background: #C2C2C2;
+}

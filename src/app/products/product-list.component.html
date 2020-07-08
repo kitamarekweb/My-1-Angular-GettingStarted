@@ -7,7 +7,15 @@
       <div class='col-md-2'>Filter by:</div>
       <div class='col-md-4'>
         <input type='text'
-               [(ngModel)]='listFilter'/>
+               [(ngModel)]='listFilter'
+               (click)="toggleDropdown()"/>
+        <div *ngIf='showDropdown' class="search-dropdown-container">
+          <div>
+            <div class="search-dropdown" *ngFor='let product of products'>
+              {{product.productName}}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div class='row'>
